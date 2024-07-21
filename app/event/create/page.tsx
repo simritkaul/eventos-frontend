@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, FormEvent } from "react";
-import axios from "../lib/axios";
+import axios from "../../../lib/axios";
 
 const CreateEvent = () => {
   const [title, setTitle] = useState<string>("");

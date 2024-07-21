@@ -1,14 +1,16 @@
-import { useState, FormEvent } from "react";
-import axios from "../lib/axios";
+"use client";
 
-const Login = () => {
+import { useState, FormEvent } from "react";
+import axios from "../../lib/axios";
+
+const Register = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/user/login", {
+      const res = await axios.post("/api/user/register", {
         email,
         password,
       });
@@ -32,9 +34,8 @@ const Login = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
       />
-      <button type="submit">Login</button>
+      <button type="submit">Register</button>
     </form>
   );
 };
-
-export default Login;
+export default Register;
